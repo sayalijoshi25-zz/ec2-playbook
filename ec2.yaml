@@ -1,0 +1,16 @@
+#ec2instance using playbook
+---
+- name: ec2 via playbook
+  hosts: localhost
+  tasks:
+  - ec2:
+      key_name: mykey
+      instance_type: t2.micro
+      image: ami-image
+      wait: yes
+      region: ap-south-1
+      count: 1
+      vpc_subnet_id: subnet-id
+      assign_public_ip: yes
+      access_key: enter access key here
+      secret_key: enter secret key here
